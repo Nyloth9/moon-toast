@@ -1,9 +1,16 @@
 import withSolid from 'rollup-preset-solid'
-import css from 'rollup-plugin-import-css'
+import postcss from 'rollup-plugin-postcss'
+import path from 'path'
 
 export default withSolid({
   targets: ['esm', 'cjs'],
   printInstructions: true,
   input: 'src/index.tsx',
-  plugins: [css()],
+  plugins: [
+    postcss({
+      minimize: true,
+      extract: true,
+/*       extract: path.resolve('dist/styles/index.css'), */
+    }),
+  ],
 })

@@ -1,7 +1,4 @@
-import './styles/index.css'
 export * from './core/context'
 export * from './core/dispatcher'
-export * from './components/Toaster'
-export * from './components/Toast'
-export * from './components/Icons'
 export type * from './core/types'
+import './styles/index.css'
