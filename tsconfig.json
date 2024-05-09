@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "./dist/",
     "strict": true,
     "target": "ESNext",
     "module": "ESNext",
@@ -18,6 +19,6 @@
     "types": [],
     "baseUrl": "."
   },
-  "include": ["src"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }
