@@ -1,0 +1,52 @@
+{
+  "name": "solid-moon-toast",
+  "version": "0.0.0",
+  "description": "A Solidjs toast library",
+  "license": "MIT",
+  "author": "Nyloth",
+  "type": "module",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "solid": "./dist/source/index.jsx",
+      "import": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "node": "./dist/cjs/index.js"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "pnpm build"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "toast",
+    "solidjs",
+    "solid",
+    "notification",
+    "alert",
+    "message",
+    "ui",
+    "component",
+    "moon-toast"
+  ],
+  "homepage": "",
+  "dependencies": {
+    "solid-js": "^1.8.11"
+  },
+  "devDependencies": {
+    "rollup": "^3.29.4",
+    "rollup-preset-solid": "^2.0.1",
+    "typescript": "^5.4.5"
+  }
+}
