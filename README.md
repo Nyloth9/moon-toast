@@ -61,6 +61,7 @@ pnpm add solid-moon-toast
 Use it:
 
 ```tsx
+// App.tsx
 import { ToastProvider } from 'solid-moon-toast'
 
 import { ToastProvider } from '../core/context'
