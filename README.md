@@ -16,6 +16,41 @@ A SolidJS toasts library
 </p>
 </div>
 
+<div class="markdown-heading">
+<h2>Features</h2>
+<ul dir="auto">
+<li><strong>Customizable Progress Bar</strong>
+  <ul>
+    <li>Customize the look and the position</li>
+    <li>Customize the progress animation</li>
+    <li>Play, pause and reset controls</li>
+  </ul>
+</li>
+<li><strong>Solidjs context api</strong>
+  <ul>
+    <li>Uses the context api to create its own scope</li>
+    <li>Exposes five methods: notify, dismiss, update, remove and custom</li>
+  </ul>
+</li>
+<li><strong>Toast features</strong>
+  <ul>
+    <li>Easily customizable</li>
+    <li>Pass string or JSX as body</li>
+    <li>Control the position</li>
+    <li>Update the toast and have the other toasts react to the height changes</li>
+    <li>Custom entrance and exit animation</li>
+    <li>On enter, update and exit callbacks</li>
+    <li>Automatic toast screen overflow prevention</li>
+    <li>Pause on hover / pause on tab change</li>
+  </ul>
+</li>
+</ul>
+</div>
+
+<div class="markdown-heading">
+<h2>Installation</h2>
+</div>
+
 > **Note** After using this template, you have to search and replace all `solid-moon-toast` and similar strings
 > with appropriate texts.
 >
