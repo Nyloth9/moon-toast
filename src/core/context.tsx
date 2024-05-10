@@ -8,7 +8,6 @@ import {
 import { createStore } from "solid-js/store";
 import type {
   ContextStore,
-  ReturnValue,
   ToastBody,
   ToastContext,
   ToastOptions,

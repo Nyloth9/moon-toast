@@ -18,7 +18,7 @@ import {
   AnimatedSpinner,
 } from "../components/Icons.jsx";
 
-class Dispatcher {
+export default class Dispatcher {
   #toastCounter = 1;
   #gutter;
   #positionY;
@@ -656,8 +656,6 @@ class Dispatcher {
     };
   }
 }
-
-export default Dispatcher;
 
 export class Timer {
   id: number | undefined;

@@ -1,31 +1,34 @@
-import { Show, onCleanup } from 'solid-js'
-import type { Toast, ToastProps } from '../core/types'
+import { JSX, Show, onCleanup } from "solid-js";
+import type { Toast, ToastProps } from "../core/types";
 
-export default function Toast(props: ToastProps) {
-  const d = props.dispatcher
-  const dismiss = () => d.dismissToast(props.id)
-  const wrapperClass = d.resolveClass('moon-toast-wrapper', props.wrapperClass)
-  const toastClass = d.resolveClass('moon-toast', props.class)
-  const iconWrapperClass = d.resolveClass('moon-toast-icon-wrapper', props.iconWrapperClass)
-  onCleanup(() => props.timer?.remove())
+export default function Toast(props: ToastProps): JSX.Element {
+  const d = props.dispatcher;
+  const dismiss = () => d.dismissToast(props.id);
+  const wrapperClass = d.resolveClass("moon-toast-wrapper", props.wrapperClass);
+  const toastClass = d.resolveClass("moon-toast", props.class);
+  const iconWrapperClass = d.resolveClass(
+    "moon-toast-icon-wrapper",
+    props.iconWrapperClass,
+  );
+  onCleanup(() => props.timer?.remove());
 
   return (
     <div
       id={props.id}
       data-role="toast"
       style={d.getOffset(props.id)}
-      ref={el => d.setToastRef(props.id, el)}
-      onClick={event => {
-        if (event.target.tagName === 'BUTTON') return
-        props.dissmisOnClick && dismiss()
+      ref={(el) => d.setToastRef(props.id, el)}
+      onClick={(event) => {
+        if (event.target.tagName === "BUTTON") return;
+        props.dissmisOnClick && dismiss();
       }}
       onMouseEnter={() => {
-        if (!props.pauseOnHover) return
-        props.timer?.pause()
+        if (!props.pauseOnHover) return;
+        props.timer?.pause();
       }}
       onMouseLeave={() => {
-        if (!props.pauseOnHover) return
-        props.timer?.resume()
+        if (!props.pauseOnHover) return;
+        props.timer?.resume();
       }}
       class={`${wrapperClass} ${d.resolvePresenceAnimation(
         props.state,
@@ -53,12 +56,20 @@ export default function Toast(props: ToastProps) {
             </div>
           </Show>
           {props.body}
-          <Show when={props.dismissButton?.show && props.dismissButton?.type === 'inline'}>
+          <Show
+            when={
+              props.dismissButton?.show &&
+              props.dismissButton?.type === "inline"
+            }
+          >
             <button
               type="button"
               onClick={dismiss}
               style={props.dismissButton?.style}
-              class={props.dismissButton?.className ?? 'moon-toast-dismiss-button_inline'}
+              class={
+                props.dismissButton?.className ??
+                "moon-toast-dismiss-button_inline"
+              }
             >
               <span class="sr-only">Close</span>
               <svg
@@ -70,7 +81,11 @@ export default function Toast(props: ToastProps) {
                 stroke-width="1.5"
                 stroke="currentColor"
               >
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
               </svg>
             </button>
           </Show>
@@ -84,12 +99,19 @@ export default function Toast(props: ToastProps) {
           </Show>
         </div>
       </Show>
-      <Show when={props.dismissButton?.show && props.dismissButton?.type === 'floating'}>
+      <Show
+        when={
+          props.dismissButton?.show && props.dismissButton?.type === "floating"
+        }
+      >
         <button
           type="button"
           onClick={dismiss}
           style={props.dismissButton?.style}
-          class={props.dismissButton?.className ?? 'moon-toast-dismiss-button_floating'}
+          class={
+            props.dismissButton?.className ??
+            "moon-toast-dismiss-button_floating"
+          }
         >
           <span class="sr-only">Close</span>
           <svg
@@ -109,5 +131,5 @@ export default function Toast(props: ToastProps) {
         </button>
       </Show>
     </div>
-  )
+  );
 }
