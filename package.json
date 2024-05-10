@@ -1,13 +1,12 @@
 {
   "name": "solid-moon-toast",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A Solidjs toast library",
   "license": "MIT",
   "author": "Nyloth",
   "type": "module",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
@@ -41,9 +40,6 @@
     "moon-toast"
   ],
   "homepage": "",
-  "dependencies": {
-    "solid-js": "^1.8.11"
-  },
   "devDependencies": {
     "rollup": "^3.29.4",
     "rollup-plugin-copy": "^3.5.0",
