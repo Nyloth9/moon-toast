@@ -4,7 +4,6 @@
 
 <!-- # solid-moon-toast -->
 
-
 <div dir="auto">
 <p align="center">
 <strong>
@@ -19,13 +18,6 @@ A SolidJS toasts library
 <div class="markdown-heading">
 <h2>Features</h2>
 <ul dir="auto">
-<li><strong>Customizable Progress Bar</strong>
-  <ul>
-    <li>Customize the look and the position</li>
-    <li>Customize the progress animation</li>
-    <li>Play, pause and reset controls</li>
-  </ul>
-</li>
 <li><strong>Solidjs context api</strong>
   <ul>
     <li>Uses the context api to create its own scope</li>
@@ -42,6 +34,13 @@ A SolidJS toasts library
     <li>On enter, update and exit callbacks</li>
     <li>Automatic toast screen overflow prevention</li>
     <li>Pause on hover / pause on tab change</li>
+  </ul>
+</li>
+<li><strong>Customizable Progress Bar</strong>
+  <ul>
+    <li>Customize the look and the position</li>
+    <li>Customize the progress animation</li>
+    <li>Play, pause and reset controls</li>
   </ul>
 </li>
 </ul>
