@@ -16,7 +16,7 @@ export default function Toast(props: ToastProps) {
       style={d.getOffset(props.id)}
       ref={el => d.setToastRef(props.id, el)}
       onClick={event => {
-        if (event.target.tagName !== 'BUTTON') return
+        if (event.target.tagName === 'BUTTON') return
         props.dissmisOnClick && dismiss()
       }}
       onMouseEnter={() => {
