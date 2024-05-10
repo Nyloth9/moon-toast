@@ -322,7 +322,7 @@ export default class Dispatcher {
     return {
       id: newToast!.id,
       ref: toastRef!,
-      timer: this.#controlTimer(newToast!),
+      timer: this.#setTimerControls(newToast!),
     };
   }
 
@@ -359,7 +359,7 @@ export default class Dispatcher {
     return {
       id: options.id,
       ref: ref!,
-      timer: this.#controlTimer(updatedToast),
+      timer: this.#setTimerControls(updatedToast),
     };
   }
 
@@ -559,7 +559,7 @@ export default class Dispatcher {
       : `${defaultClass} ${newClass.className}`.trim();
   }
 
-  #controlTimer(toast: Toast) {
+  #setTimerControls(toast: Toast) {
     return {
       pause: () => {
         toast.timer?.pause();
