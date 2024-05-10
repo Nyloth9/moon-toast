@@ -63,8 +63,6 @@ Use it:
 ```tsx
 // App.tsx
 import { ToastProvider } from 'solid-moon-toast'
-
-import { ToastProvider } from '../core/context'
 import ToastsPage from './ToastsPage'
 
 const App = () => {
@@ -80,7 +78,7 @@ export default App
 
 ```tsx
 // ToastsPage.tsx
-import { useToast } from "../core/context";
+import { useToast } from "solid-moon-toast";
 
 const ToastsPage = () => {
   const { notify } = useToast();
