@@ -7,9 +7,9 @@
 
 <div dir="auto">
 <p align="center">
-**Bold**
+<strong>
 A SolidJS toasts library
-**Bold**
+</strong>
 </p>
 <p align="center" >
 <a href="">Check out the Demo</a>
