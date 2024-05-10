@@ -2,9 +2,7 @@
   <img width="100%" src="https://assets.solidjs.com/banner?type=solid-moon-toast&background=tiles&project=%20" alt="solid-moon-toast">
 </p>
 
-# solid-moon-toast
-
-[![pnpm](https://img.shields.io/badge/maintained%20with-pnpm-cc00ff.svg?style=for-the-badge&logo=pnpm)](https://pnpm.io/)
+<!-- # solid-moon-toast -->
 
 {{desc_of_lib}}
 
