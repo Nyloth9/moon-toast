@@ -16,7 +16,7 @@ A SolidJS toasts library
 </div>
 
 <div class="markdown-heading">
-<h2>Features</h2>
+<h2 tabindex="-1" class="heading-element" dir="auto">Features</h2>
 <ul dir="auto">
 <li><strong>Solidjs context api</strong>
   <ul>
@@ -30,7 +30,7 @@ A SolidJS toasts library
     <li>Pass string or JSX as body</li>
     <li>Control the position</li>
     <li>Update the toast and have the other toasts react to the height changes</li>
-    <li>Custom entrance and exit animation</li>
+    <li>Custom entrance and exit animations</li>
     <li>On enter, update and exit callbacks</li>
     <li>Automatic toast screen overflow prevention</li>
     <li>Pause on hover / pause on tab change</li>
@@ -45,19 +45,6 @@ A SolidJS toasts library
 </li>
 </ul>
 </div>
-
-<div class="markdown-heading">
-<h2>Installation</h2>
-</div>
-
-> **Note** After using this template, you have to search and replace all `solid-moon-toast` and similar strings
-> with appropriate texts.
->
-> `solid-moon-toast` should be a **kebab-case** string representing the name of you monorepo.
->
-> `{{desc_of_lib}}` should be a **Normal case** string with the description of the repository.
->
-> `{{me}}` should be a **kebab-case** string from your profile URL.
 
 ## Quick start
 
@@ -74,5 +61,34 @@ pnpm add solid-moon-toast
 Use it:
 
 ```tsx
-import solid-moon-toast from 'solid-moon-toast'
+import { ToastProvider } from 'solid-moon-toast'
+
+import { ToastProvider } from '../core/context'
+import ToastsPage from './ToastsPage'
+
+const App = () => {
+  return (
+    <ToastProvider>
+      <ToastsPage />
+    </ToastProvider>
+  )
+}
+
+export default App
+```
+
+```tsx
+// ToastsPage.tsx
+import { useToast } from "../core/context";
+
+const ToastsPage = () => {
+  const { notify } = useToast();
+
+  return (
+    <div>
+    <button onClick={() => notify("🎉 Operation Successful!")}>
+    </div>
+  )
+}
+
 ```
