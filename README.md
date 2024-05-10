@@ -7,7 +7,7 @@
 <div dir="auto">
 <p align="center">
 <strong>
-A SolidJS toasts library
+A SolidJS toast library
 </strong>
 </p>
 <p align="center" >
@@ -48,7 +48,7 @@ A SolidJS toasts library
 
 ## Quick start
 
-Install it:
+Installation:
 
 ```bash
 npm i solid-moon-toast
@@ -58,7 +58,7 @@ yarn add solid-moon-toast
 pnpm add solid-moon-toast
 ```
 
-Use it:
+Usage:
 
 ```tsx
 // App.tsx
