@@ -164,4 +164,11 @@ interface CommonProperties {
   onIdle?: string;
   pauseOnHover?: boolean;
   unstyled?: boolean;
+  aria?: {
+    role: any;
+    "aria-live": any;
+  };
+  enterCallback?: () => void;
+  exitCallback?: () => void;
+  updateCallback?: () => void;
 }

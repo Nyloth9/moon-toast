@@ -1,6 +1,6 @@
 import withSolid from 'rollup-preset-solid'
 import postcss from 'rollup-plugin-postcss'
-import nodeResolve from '@rollup/plugin-node-resolve'
+import copy from 'rollup-plugin-copy'
 
 export default withSolid({
   targets: ['esm', 'cjs'],
@@ -11,6 +11,8 @@ export default withSolid({
       minimize: true,
       extract: true,
     }),
-    nodeResolve(),
+    copy({
+      targets: [{ src: 'src/styles/index.css', dest: 'dist/source/styles' }],
+    }),
   ],
 })

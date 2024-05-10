@@ -29,6 +29,7 @@ const Toaster = (props: ToasterProps) => (
           onIdle={toast.onIdle}
           pauseOnHover={toast.pauseOnHover}
           unstyled={toast.unstyled}
+          aria={toast.aria}
         />
       )}
     </For>

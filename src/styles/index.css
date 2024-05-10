@@ -11,7 +11,7 @@ html {
 
 body {
   font-family: Inter, sans-serif;
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin: 0;
@@ -20,12 +20,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-*[data-role="toast"] {
+*[data-role='toast'] {
   pointer-events: all;
   will-change: transform, opacity, top, bottom;
 }
 
-*[data-role="progress"] {
+*[data-role='progress'] {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   pointer-events: none;
@@ -59,9 +59,7 @@ body {
   border-radius: 8px;
   line-height: 1.25rem;
   overflow-wrap: anywhere;
-  box-shadow:
-    rgba(0, 0, 0, 0.1) 0px 3px 10px,
-    rgba(0, 0, 0, 0.05) 0px 3px 3px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 10px, rgba(0, 0, 0, 0.05) 0px 3px 3px;
 }
 
 .moon-toast-icon-wrapper {
@@ -145,8 +143,7 @@ body {
 
 .moon-toast--slide-out-bottom {
   animation: mt_slideOutBottom 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  -webkit-animation: mt_slideOutBottom 0.3s cubic-bezier(0.4, 0, 0.2, 1)
-    forwards;
+  -webkit-animation: mt_slideOutBottom 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .moon-toast--zoomIn {
@@ -382,12 +379,8 @@ body {
   stroke: #fff;
   stroke-miterlimit: 10;
   box-shadow: inset 0px 0px 0px var(--color-success);
-  animation:
-    mt-fill 0.4s ease-in-out 0.4s forwards,
-    mt-scale 0.3s ease-in-out 0.9s both;
-  -webkit-animation:
-    mt-fill 0.4s ease-in-out 0.4s forwards,
-    mt-scale 0.3s ease-in-out 0.9s both;
+  animation: mt-fill 0.4s ease-in-out 0.4s forwards, mt-scale 0.3s ease-in-out 0.9s both;
+  -webkit-animation: mt-fill 0.4s ease-in-out 0.4s forwards, mt-scale 0.3s ease-in-out 0.9s both;
 }
 
 .mt-checkmark__circle {
@@ -423,11 +416,8 @@ body {
   stroke: #fff;
   stroke-miterlimit: 10;
   box-shadow: inset 0px 0px 0px var(--color-error);
-  animation:
-    mt-fill_cross 0.4s ease-in-out 0.4s forwards,
-    mt-scale 0.3s ease-in-out 0.9s both;
-  -webkit-animation:
-    mt-fill_cross 0.4s ease-in-out 0.4s forwards,
+  animation: mt-fill_cross 0.4s ease-in-out 0.4s forwards, mt-scale 0.3s ease-in-out 0.9s both;
+  -webkit-animation: mt-fill_cross 0.4s ease-in-out 0.4s forwards,
     mt-scale 0.3s ease-in-out 0.9s both;
 }
 
@@ -511,7 +501,3 @@ body {
     box-shadow: inset 0px 0px 0px 30px var(--color-success);
   }
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

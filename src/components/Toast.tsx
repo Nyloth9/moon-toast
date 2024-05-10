@@ -16,9 +16,8 @@ export default function Toast(props: ToastProps) {
       style={d.getOffset(props.id)}
       ref={el => d.setToastRef(props.id, el)}
       onClick={event => {
-        if (event.target.tagName !== 'BUTTON') {
-          props.dissmisOnClick && dismiss()
-        }
+        if (event.target.tagName !== 'BUTTON') return
+        props.dissmisOnClick && dismiss()
       }}
       onMouseEnter={() => {
         if (!props.pauseOnHover) return
@@ -34,6 +33,7 @@ export default function Toast(props: ToastProps) {
         props.onExit,
         props.onIdle,
       )}`.trim()}
+      {...props.aria}
     >
       <Show when={props.unstyled}>
         {props.body}

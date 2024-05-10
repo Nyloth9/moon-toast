@@ -45,6 +45,10 @@ class Dispatcher {
   onIdle;
   pauseOnHover;
   unstyled;
+  aria;
+  enterCallback;
+  updateCallback;
+  exitCallback;
 
   constructor(options: DispatcherConstructorArgs) {
     this.store = options.store;
@@ -100,6 +104,13 @@ class Dispatcher {
     this.onIdle = options.onIdle;
     this.pauseOnHover = options.pauseOnHover ?? true;
     this.unstyled = options.unstyled ?? false;
+    (this.aria = {
+      role: options.aria?.role ?? "status",
+      "aria-live": options.aria?.["aria-live"] ?? "polite",
+    }),
+      (this.enterCallback = options.enterCallback);
+    this.updateCallback = options.updateCallback;
+    this.exitCallback = options.exitCallback;
   }
 
   #toastFactory(
@@ -273,6 +284,26 @@ class Dispatcher {
         existingToast?.pauseOnHover ??
         this.pauseOnHover,
       unstyled: options?.unstyled ?? existingToast?.unstyled ?? this.unstyled,
+      aria: {
+        role:
+          options?.aria?.role ?? existingToast?.aria?.role ?? this.aria.role,
+        "aria-live":
+          options?.aria?.["aria-live"] ??
+          existingToast?.aria?.["aria-live"] ??
+          this.aria["aria-live"],
+      },
+      enterCallback:
+        options?.enterCallback ||
+        existingToast?.enterCallback ||
+        this.enterCallback,
+      updateCallback:
+        options?.updateCallback ||
+        existingToast?.updateCallback ||
+        this.updateCallback,
+      exitCallback:
+        options?.exitCallback ||
+        existingToast?.exitCallback ||
+        this.exitCallback,
     };
   }
 
@@ -286,6 +317,7 @@ class Dispatcher {
     }, options?.enterDuration || this.enterDuration);
 
     this.#animateProgressBar(newToast!, toastRef!);
+    newToast?.enterCallback?.();
 
     return {
       id: newToast!.id,
@@ -322,6 +354,7 @@ class Dispatcher {
 
     const ref = this.#getToastRef(options.id);
     this.#animateProgressBar(updatedToast, ref!);
+    updatedToast.updateCallback?.();
 
     return {
       id: options.id,
@@ -374,6 +407,7 @@ class Dispatcher {
 
     toastRef.style.pointerEvents = "none";
     this.#applyState(id, "exiting");
+    toast.exitCallback?.();
 
     setTimeout(() => {
       this.setStore(

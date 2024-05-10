@@ -54,6 +54,10 @@ export const ToastProvider = (props: ToastProviderProps) => {
     onIdle: props.onIdle,
     pauseOnHover: props.pauseOnHover,
     unstyled: props.unstyled,
+    aria: props.aria,
+    enterCallback: props.enterCallback,
+    updateCallback: props.updateCallback,
+    exitCallback: props.exitCallback,
   });
 
   const notify = (
