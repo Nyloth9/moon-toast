@@ -85,7 +85,7 @@ const ToastsPage = () => {
 
   return (
     <div>
-    <button onClick={() => notify("🎉 Operation Successful!")}>
+      <button onClick={() => notify("🎉 Operation Successful!")}>
     </div>
   )
 }
