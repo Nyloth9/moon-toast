@@ -1,5 +1,5 @@
 <p>
-  <img width="100%" src="https://assets.solidjs.com/banner?type=solid-moon-toast&background=tiles&project=%20" alt="solid-moon-toast">
+  <img width="100%" src="https://i.postimg.cc/0jVYDB3g/moon-toast-bg.png" alt="solid-moon-toast">
 </p>
 
 <!-- # solid-moon-toast -->
