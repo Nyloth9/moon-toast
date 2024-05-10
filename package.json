@@ -42,12 +42,11 @@
   ],
   "homepage": "",
   "dependencies": {
-    "rollup-plugin-import-css": "^3.5.0",
-    "rollup-plugin-postcss": "^4.0.2",
     "solid-js": "^1.8.11"
   },
   "devDependencies": {
     "rollup": "^3.29.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-preset-solid": "^2.0.1",
     "typescript": "^5.4.5"
   }
