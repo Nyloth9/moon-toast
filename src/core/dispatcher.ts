@@ -618,7 +618,7 @@ export default class Dispatcher {
 export class Timer {
   id: number | undefined
   static: boolean
-  animation: Animation | undefined
+  private animation: Animation | undefined
   private duration: number
   private start: number
   private remaining: number
