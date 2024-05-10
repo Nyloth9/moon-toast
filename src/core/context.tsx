@@ -76,7 +76,8 @@ export const ToastProvider = (props: ToastProviderProps) => {
     dispatcher.dismissToast(id);
   };
 
-  const remove = (id: string) => {
+  const remove = (id?: string) => {
+    if (!id) return dispatcher.removeAllToasts();
     dispatcher.removeToast(id);
   };
 

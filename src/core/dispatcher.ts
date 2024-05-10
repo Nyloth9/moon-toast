@@ -452,6 +452,15 @@ class Dispatcher {
     );
   }
 
+  removeAllToasts() {
+    this.setStore(
+      produce((state) => {
+        state.toasts = [];
+        state.refArray = [];
+      }),
+    );
+  }
+
   reorderToasts() {
     let accumulatedHeight = 0;
 
