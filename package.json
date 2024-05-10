@@ -1,6 +1,6 @@
 {
   "name": "solid-moon-toast",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A Solidjs toast library",
   "license": "MIT",
   "author": "Nyloth",
@@ -45,8 +45,8 @@
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-preset-solid": "^2.0.1",
-    "typescript": "^5.4.5",
-    "solid-js": "^1.8.11"
+    "solid-js": "^1.8.11",
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "solid-js": "^1.8.11"
