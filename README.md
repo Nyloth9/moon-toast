@@ -4,11 +4,15 @@
 
 <!-- # solid-moon-toast -->
 
-A SolidJS toasts library.
 
-<p>
+<div dir="auto">
+<p align="center">
+A SolidJS toasts library
+</p>
+<p align="center" >
 <a href="">Check out the Demo</a>
 </p>
+</div>
 
 > **Note** After using this template, you have to search and replace all `solid-moon-toast` and similar strings
 > with appropriate texts.
