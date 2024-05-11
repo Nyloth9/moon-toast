@@ -11,7 +11,7 @@ A SolidJS toast library
 </strong>
 </p>
 <p align="center" >
-<a href="https://solid-moon-toast-web.vercel.app/">Check out the Demo</a>
+<a href="https://solid-moon-toast-web.vercel.app/" target="_blank">Check out the Demo</a>
 </p>
 </div>
 
