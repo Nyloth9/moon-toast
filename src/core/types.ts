@@ -50,6 +50,7 @@ export interface ToastProviderProps extends CommonProperties {
   offsetY?: number
   offsetX?: number
   duration?: number | 'infinite'
+  preventHeightOverflow?: boolean
   toasterStyle?: Omit<
     JSX.CSSProperties,
     'top' | 'bottom' | 'left' | 'right' | 'justify-content' | 'align-items' | 'pointer-events'

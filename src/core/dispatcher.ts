@@ -22,6 +22,7 @@ export default class Dispatcher {
   #positionX
   #offsetY
   #offsetX
+  #preventHeightOverflow
   store
   setStore
   duration
@@ -55,6 +56,7 @@ export default class Dispatcher {
     this.#positionX = options.positionX || 'right'
     this.#offsetX = options.offsetX || 16
     this.#offsetY = options.offsetY || 16
+    this.#preventHeightOverflow = options.preventHeightOverflow ?? true
     this.toasterStyle = this.#resolveToasterStyles(options.toasterStyle)
     this.style = options.style
     this.wrapperClass = {
@@ -438,7 +440,7 @@ export default class Dispatcher {
     })
 
     this.setStore('offsetsArray', offsets)
-    this.#preventHeightOverflow()
+    this.#controlHeightOverflow()
 
     if (document?.visibilityState === 'hidden') {
       this.store.toasts.forEach(toast => {
@@ -575,7 +577,8 @@ export default class Dispatcher {
     toast.timer?.setAnimation(animationId)
   }
 
-  #preventHeightOverflow() {
+  #controlHeightOverflow() {
+    if (!this.#preventHeightOverflow) return
     const refArray = this.store.refArray
     if (refArray.length <= 1) return
 
