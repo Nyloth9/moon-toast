@@ -5,6 +5,7 @@ import {
   DispatcherConstructorArgs,
   Offset,
   ReturnValue,
+  TimerControls,
   Toast,
   ToastBody,
   ToastFactoryOptions,
@@ -288,7 +289,7 @@ export default class Dispatcher {
     return {
       id: newToast!.id,
       ref: toastRef!,
-      timer: this.#setTimerControls(newToast!),
+      timer: this.#setTimerControls(newToast!.timer),
     }
   }
 
@@ -322,7 +323,7 @@ export default class Dispatcher {
     return {
       id: options.id,
       ref: ref!,
-      timer: this.#setTimerControls(updatedToast),
+      timer: this.#setTimerControls(updatedToast.timer),
     }
   }
 
@@ -356,8 +357,9 @@ export default class Dispatcher {
     this.addToast(toast, options)
 
     const ref = this.#getToastRef(args.id)
+    const timerControls = this.#setTimerControls(args.timer)
 
-    return { id: args.id, ref }
+    return { id: args.id, ref: ref, timer: timerControls }
   }
 
   dismissToast(id: string) {
@@ -519,19 +521,21 @@ export default class Dispatcher {
       : `${defaultClass} ${newClass.className}`.trim()
   }
 
-  #setTimerControls(toast: Toast) {
+  #setTimerControls(timer: Timer | undefined): TimerControls | undefined {
+    if (!timer) return
+
     return {
       pause: () => {
-        toast.timer?.pause()
-        toast.timer?.setStatic(true)
+        timer?.pause()
+        timer?.setStatic(true)
       },
       play: () => {
-        toast.timer?.resume()
-        toast.timer?.setStatic(false)
+        timer?.resume()
+        timer?.setStatic(false)
       },
       reset: () => {
-        toast.timer?.reset()
-        toast.timer?.setStatic(true)
+        timer?.reset()
+        timer?.setStatic(true)
       },
     }
   }
