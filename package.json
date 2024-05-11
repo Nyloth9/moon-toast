@@ -1,6 +1,6 @@
 {
   "name": "solid-moon-toast",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "A Solidjs toast library",
   "license": "MIT",
   "author": "Nyloth",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Nyloth9/moon-toast.git"
+    "url": "git+https://github.com/Nyloth9/moon-toast.git"
   },
   "keywords": [
     "toast",
