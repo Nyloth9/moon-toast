@@ -104,7 +104,7 @@ const ToastsPage = () => {
 
 ```tsx
 <ToastProvider
-// OPTIONS THAT CAN BE APPLIED ONLY GLOBALY:
+//** options that can be applied only globally **//
   gutter={16} // distance between the toasts (global only)
   maxToasts={10} // set to 0 if you dont want to limit the number of toasts (global only)
   offsetX={16} // distance from the screen edge on the X axis (global only)
@@ -116,7 +116,7 @@ const ToastsPage = () => {
   }}
   pauseOnTabSwitch={true} // pause the toast timer when switching browser tabs (global only)
 
-// OPTIONS THAT CAN BE APPLIED GLOBALLY AND THEN CHANGED PER TOAST:
+//** options that can be applied globally and rewritten per toast **//
   class={{ className: "my-toast-class", replaceDefault: true }} // custom toast class, choose to replace default or not
   style={{ "background-color": "blue" }} // custom style for the toast
   dismissButton={{
