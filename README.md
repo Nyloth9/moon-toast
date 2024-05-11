@@ -17,6 +17,7 @@ A SolidJS toast library
 
 <div class="markdown-heading">
 <h2 tabindex="-1" class="heading-element" dir="auto">Features</h2>
+</div>
 <ul dir="auto">
 <li><strong>Solidjs context api</strong>
   <ul>
@@ -44,7 +45,7 @@ A SolidJS toast library
   </ul>
 </li>
 </ul>
-</div>
+
 
 ## Quick start
 
@@ -91,3 +92,10 @@ const ToastsPage = () => {
 }
 
 ```
+<div class="markdown-heading">
+  <h2 tabindex="-1" class="heading-element" dir="auto">Documentation</h2>
+</div>
+
+<div class="markdown-heading" dir="auto">
+  <h3 tabindex="-1" dir="auto">Global options</h3>
+</div>
