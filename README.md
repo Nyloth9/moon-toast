@@ -97,7 +97,7 @@ const ToastsPage = () => {
 </div>
 
 <div class="markdown-heading" dir="auto">
-  <h3 tabindex="-1" dir="auto">Global options</h3>
+  <h3 tabindex="-1" dir="auto">Toast options</h3>
 </div>
 
 <p>Global options apply to the toasts root element, all toast container elements, and all toasts. These options can be overriden on individual toasts.</p>
