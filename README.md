@@ -27,7 +27,7 @@ A SolidJS toast library
 <li><strong>Toast features</strong>
   <ul>
     <li>Easily customizable</li>
-    <li>Pass string or JSX as body</li>
+    <li>Pass string or JSX as toast body</li>
     <li>Control the position</li>
     <li>Update the toast and have the other toasts react to the height changes</li>
     <li>Custom entrance and exit animations</li>
