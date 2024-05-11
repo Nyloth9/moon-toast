@@ -11,7 +11,7 @@ A SolidJS toast library
 </strong>
 </p>
 <p align="center" >
-<a href="">Check out the Demo</a>
+<a href="https://solid-moon-toast-web.vercel.app/">Check out the Demo</a>
 </p>
 </div>
 
@@ -100,7 +100,7 @@ const ToastsPage = () => {
   <h3 tabindex="-1" dir="auto">Toast options</h3>
 </div>
 
-<p>Global options apply to the toasts root element, all toast container elements, and all toasts. These options can be overriden on individual toasts.</p>
+<p>Toast options are divided into global and per toast options.</p>
 
 ```tsx
 <ToastProvider
