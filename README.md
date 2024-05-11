@@ -115,6 +115,7 @@ const ToastsPage = () => {
    "background-color": "blue", // custom style for the toaster (global only)
   }}
   pauseOnTabSwitch={true} // pause the toast timer when switching browser tabs (global only)
+  preventHeightOverflow={true} // when toasts overflow the screen height, dismiss the oldest toast (global only)
 
 //** options that can be applied globally and rewritten per toast **//
   class={{ className: "my-toast-class", replaceDefault: true }} // custom toast class, choose to replace default or not
