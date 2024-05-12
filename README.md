@@ -191,7 +191,7 @@ const {notify, update, dismiss, remove, custom} = useToast();
 
 
 <h4 tabindex="-1" dir="auto">notify()</h4>
-<p>Creates a new toast. Accepts a string or jsx as the first argument, and options (common options) as the second argument.</p>
+<p>Creates a new toast. Accepts a string or jsx as the first argument, and options (<a href="#common-options">common options</a>) as the second argument.</p>
 Returns an id, ref to the toast, and a timer:
 
 ```tsx
