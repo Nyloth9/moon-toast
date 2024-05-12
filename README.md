@@ -103,7 +103,7 @@ const ToastsPage = () => {
 <p>Toast options are divided into global and per toast options.</p>
 
 
-<h4>Global options:</h4>
+<h4 tabindex="-1" dir="auto">Global options:</h4>
 
 ```tsx
   gutter={16} // distance between the toasts (global only)
@@ -119,12 +119,13 @@ const ToastsPage = () => {
 >
 ```
 
-  <h4 tabindex="-1" dir="auto">Common options:</h4>
+<h4 tabindex="-1" dir="auto">Common options:</h4>
 
 
-<p>These settings can be applied either globally on the ToastProvider component, or as indvidual toast options. Any setting passed to the individual toasts will override the corresponding global option.</p>
+<p>These settings can be applied either globally on the ToastProvider component (all except the toast type), or as indvidual toast options. Any setting passed to the individual toast will override the corresponding global setting.</p>
 
 ```tsx
+  type="success" // type of the toast, accepts: 'success' | 'error' | 'loading' 
   class={{ className: "my-toast-class", replaceDefault: true }} // custom toast class, choose to replace default or not
   style={{ "background-color": "blue" }} // custom style for the toast
   dismissButton={{
@@ -171,4 +172,19 @@ const ToastsPage = () => {
   }}
   aria={{ "aria-live": "polite", role: "status" }} // accessibility props
   unstyled={false} // remove all default styles of the toast, doesn't affect the toast wrapper
+```
+
+<div class="markdown-heading" dir="auto">
+  <h3 tabindex="-1" dir="auto">Functions</h3>
+</div>
+
+The useToast function returns an object with five methods.
+
+```tsx
+import {useToast} from "solid-moon-toast";
+
+...
+
+const {notify, update, dismiss, remove, custom} = useToast();
+
 ```
