@@ -102,7 +102,6 @@ const ToastsPage = () => {
 
 <p>Toast options are divided into global and per toast options.</p>
 
-
 <h4 tabindex="-1" dir="auto">Global options:</h4>
 
 ```tsx
@@ -121,11 +120,10 @@ const ToastsPage = () => {
 
 <h4 tabindex="-1" dir="auto">Common options:</h4>
 
-
 <p>These settings can be applied either globally on the ToastProvider component (all except the toast type), or as indvidual toast options. Any setting passed to the individual toast will override the corresponding global setting.</p>
 
 ```tsx
-  type="success" // type of the toast, accepts: 'success' | 'error' | 'loading' 
+  type="success" // type of the toast, accepts: 'success' | 'error' | 'loading'
   class={{ className: "my-toast-class", replaceDefault: true }} // custom toast class, choose to replace default or not
   style={{ "background-color": "blue" }} // custom style for the toast
   dismissButton={{
@@ -189,33 +187,34 @@ const {notify, update, dismiss, remove, custom} = useToast();
 
 ```
 
-
 <h4 tabindex="-1" dir="auto">notify()</h4>
 <p>Creates a new toast. Accepts a string or jsx as the first argument, and options (<a href="#common-options">common options</a>) as the second argument.</p>
 Returns an id, a ref to the toast, and a timer:
 
 ```tsx
-const {id, ref, timer} = notify("My first toast!", {duration: 5000})
+const { id, ref, timer } = notify('My first toast!', { duration: 5000 })
 ```
 
 <p></p>
 You can provide your own id:
 
 ```tsx
-const toastId = "toast-1"
+const toastId = 'toast-1'
 
-const {id, ref, timer} = notify("My first toast!", {id: toastId})
+const { id, ref, timer } = notify('My first toast!', { id: toastId })
 ```
+
 <p></p>
 The timer allows for the control of the toast duration and the progress bar animation:
 
 ```tsx
-const {timer} = notify();
+const { timer } = notify()
 
 timer.pause()
 timer.play()
 timer.reset()
 ```
+
 <h4 tabindex="-1" dir="auto">update()</h4>
 <p>Updates an existing toast. Accepts a string or jsx as the first argument, and options (<a href="#common-options">common options</a>) as the second argument. Passing an id as an option is mandatory.</p>
 Returns an id, a ref to the toast, and a timer:
@@ -223,22 +222,66 @@ Returns an id, a ref to the toast, and a timer:
 ```tsx
 const {id, ref, timer} = update("Updating toast...", id: "toast-1")
 ```
+
 <p></p>
 Example:
 
 ```tsx
-const {notify, update} = useToast();
+const { notify, update } = useToast()
 
 const getData = async () => {
-  const {id} = notify("Fetching data...", {type: "loading"})
+  const { id } = notify('Fetching data...', { type: 'loading' })
 
-  const response = await fetch("http://example.com/api")
-  const data = await response.json();
+  const response = await fetch('http://example.com/api')
+  const data = await response.json()
 
-  if (!data) return update("Error fetching data.", {id, type: "error"});
+  if (!data) return update('Error fetching data.', { id, type: 'error' })
 
-  update("Successfully fetched data!", {id, type: "success"})
-  return data;
+  update('Successfully fetched data!', { id, type: 'success' })
+  return data
 }
+```
+
+<h4 tabindex="-1" dir="auto">dismiss()</h4>
+<p>Dismisses a toast. Call with an id to dismiss a specific toast, or with no arguments to dismiss all toasts.</p>
+
+```jsx
+dismiss('toast-1')
+dismiss() // dismiss all toasts
+```
+
+<h4 tabindex="-1" dir="auto">remove()</h4>
+<p>Removes a toast immediately, without triggering the exit animation. Call with an id to remove a specific toast, or with no arguments to remove all toasts.</p>
+
+```jsx
+remove('toast-1')
+remove() // removes all toasts
+```
+
+<h4 tabindex="-1" dir="auto">custom()</h4>
+<p>Provide your own toast body. Provides id, timer, and duration as args. Accepts limited options.</p>
+
+```jsx
+custom({id, duration, timer} => (
+  <div>
+    <button onClick={()=> timer.pause()}>Pause toast</button>
+  </div>
+), {
+  onEnter: "slide-in-top"
+});
+
+// options:
+  | 'duration'
+  | 'dismissButton'
+  | 'dissmisOnClick'
+  | 'enterDuration'
+  | 'exitDuration'
+  | 'id'
+  | 'onEnter'
+  | 'onExit'
+  | 'onIdle'
+  | 'pauseOnHover'
+  | 'progressBar'
+  | 'wrapperClass'
 
 ```
