@@ -192,7 +192,7 @@ const {notify, update, dismiss, remove, custom} = useToast();
 
 <h4 tabindex="-1" dir="auto">notify()</h4>
 <p>Creates a new toast. Accepts a string or jsx as the first argument, and options (<a href="#common-options">common options</a>) as the second argument.</p>
-Returns an id, ref to the toast, and a timer:
+Returns an id, a ref to the toast, and a timer:
 
 ```tsx
 const {id, ref, timer} = notify("My first toast!", {duration: 5000})
@@ -211,7 +211,34 @@ The timer allows for the control of the toast duration and the progress bar anim
 
 ```tsx
 const {timer} = notify();
+
 timer.pause()
 timer.play()
 timer.reset()
+```
+<h4 tabindex="-1" dir="auto">update()</h4>
+<p>Updates an existing toast. Accepts a string or jsx as the first argument, and options (<a href="#common-options">common options</a>) as the second argument. Passing an id as an option is mandatory.</p>
+Returns an id, a ref to the toast, and a timer:
+
+```tsx
+const {id, ref, timer} = update("Updating toast...", id: "toast-1")
+```
+<p></p>
+Example:
+
+```tsx
+const {notify, update} = useToast();
+
+const getData = async () => {
+  const {id} = notify("Fetching data...", {type: "loading"})
+
+  const response = await fetch("http://example.com/api")
+  const data = await response.json();
+
+  if (!data) return update("Error fetching data.", {id, type: "error"});
+
+  update("Successfully fetched data!", {id, type: "success"})
+  return data;
+}
+
 ```
