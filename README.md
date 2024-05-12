@@ -188,3 +188,30 @@ import {useToast} from "solid-moon-toast";
 const {notify, update, dismiss, remove, custom} = useToast();
 
 ```
+
+
+<h4 tabindex="-1" dir="auto">notify()</h4>
+<p>Creates a new toast. Accepts a string or jsx as the first argument, and options (common options) as the second argument.</p>
+Returns an id, ref to the toast, and a timer:
+
+```tsx
+const {id, ref, timer} = notify("My first toast!", {duration: 5000})
+```
+
+<p></p>
+You can provide your own id:
+
+```tsx
+const toastId = "toast-1"
+
+const {id, ref, timer} = notify("My first toast!", {id: toastId})
+```
+<p></p>
+The timer allows for the control of the toast duration and the progress bar animation:
+
+```tsx
+const {timer} = notify();
+timer.pause()
+timer.play()
+timer.reset()
+```
