@@ -102,8 +102,10 @@ const ToastsPage = () => {
 
 <p>Toast options are divided into global and per toast options.</p>
 
+
+<h4>Global options:</h4>
+
 ```tsx
-<ToastProvider
   gutter={16} // distance between the toasts (global only)
   maxToasts={10} // set to 0 if you dont want to limit the number of toasts (global only)
   offsetX={16} // distance from the screen edge on the X axis (global only)
@@ -114,66 +116,15 @@ const ToastsPage = () => {
    "background-color": "blue", // custom style for the toaster (global only)
   }}
   pauseOnTabSwitch={true} // pause the toast timer when switching browser tabs (global only)
-  preventHeightOverflow={true} // when toasts overflow the screen height, dismiss the oldest toast (global only)
-
-//** options that can be applied globally and rewritten per toast **//
-  class={{ className: "my-toast-class", replaceDefault: true }} // custom toast class, choose to replace default or not
-  style={{ "background-color": "blue" }} // custom style for the toast
-  dismissButton={{
-   className: "my-dismiss-class", // custom class for dismiss button
-   show: true, // show dismiss button
-   style: { color: "red" }, // custom style for dismiss button
-   type: "floating", // floating or inline
-  }}
-  dissmisOnClick={false} // dismiss toast when clicking on the body
-  duration="infinite" // duration in ms or infinite
-  enterCallback={() => null} // pass a function that will be called on toast enter
-  updateCallback={() => null} // pass a function that will be called on toast update
-  exitCallback={() => null} // pass a function that will be called on toast exit
-  onEnter="my-entrance-animation" // class that will be applied to the toast container on enter
-  onIdle="my-idle-animation" // class that will be applied to the toast container when idle
-  onExit="my-exit-animation" // class that will be applied to the toast container on exit
-  enterDuration={500} // entrance duration; should be the same as the duration of the entrance animation
-  exitDuration={500} // entrance duration; should be the same as the duration of the entrance animation
-  pauseOnHover={true} // pause the toast timer when hovering over it
-  progressBar={{
-   showDefault: true, // show the default progress bar
-   className: "my-progress-bar-class", // custom class for progress bar
-   style: { "background-color": "red" }, // custom style for progress bar
-   animate: { // pass the arguments to the el.animate() method which will be called on the progress bar
-      keyframes: [{ width: "0%" }, { width: "100%" }], // pass the keyframes, the options or both
-      options: { // pass the keyframes, the options or both
-        duration: 5000,
-        fill: "forwards",
-        easing: "linear",
-      },
-   },
-  }}
-  wrapperClass={{
-   className: "my-wrapper-class",
-   replaceDefault: false,
-  }} // custom wrapper class, choose to replace default or not
-  icon={<svg></svg>} // custom icon for the toast, accepts a JSX element
-  iconWrapperClass={{
-   className: "my-icon-wrapper-class", // custom icon wrapper class
-   replaceDefault: false, // replace default icon wrapper
-  }}
-  iconWrapperStyle={{
-   "background-color": "red", // custom style for the icon wrapper
-  }}
-  aria={{ "aria-live": "polite", role: "status" }} // accessibility props
-  unstyled={false} // remove all default styles of the toast, doesn't affect the toast wrapper
 >
 ```
 
-<div class="markdown-heading" dir="auto">
-  <h3 tabindex="-1" dir="auto">Toast options</h3>
-</div>
+  <h4 tabindex="-1" dir="auto">Common options:</h4>
 
-<p>For individual toast options, specific settings can be applied directly to each toast element. These settings will override any global options that have been set for the root element, toast container elements, or all toasts.</p>
+
+<p>These settings can be applied either globally on the ToastProvider component, or as indvidual toast options. Any setting passed to the individual toasts will override the corresponding global option.</p>
 
 ```tsx
-notify("This is a toast", {
   class={{ className: "my-toast-class", replaceDefault: true }} // custom toast class, choose to replace default or not
   style={{ "background-color": "blue" }} // custom style for the toast
   dismissButton={{
@@ -220,6 +171,4 @@ notify("This is a toast", {
   }}
   aria={{ "aria-live": "polite", role: "status" }} // accessibility props
   unstyled={false} // remove all default styles of the toast, doesn't affect the toast wrapper
- }
-)
 ```
