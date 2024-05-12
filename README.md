@@ -293,3 +293,16 @@ const {id, ref, timer: timerControls} = custom({id, duration, timer} => (
 </div>
 
 <h4 tabindex="-1" dir="auto">Custom progress bar</h4>
+
+```tsx
+```
+
+
+<h4 tabindex="-1" dir="auto">Computations created outside a createRoot error</h4>
+<p>This error occurs when passing a jsx component as the first argument to the create toast functions. You can fix it by wrapping the component with createRoot().</p>
+
+```tsx
+ notify(<MyComponent message="This is a test message" />); // will log "computations created outside a `createRoot` or `render` will never be disposed"
+
+ notify(createRoot(()=> <MyComponent message="This is a test message" />)) // no error
+```
