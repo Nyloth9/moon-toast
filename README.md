@@ -122,7 +122,7 @@ const ToastsPage = () => {
 
 <h4 tabindex="-1" dir="auto">Common options:</h4>
 
-<p>These settings can be applied either globally on the ToastProvider component (all except the toast type), or as indvidual toast options. Any setting passed to the individual toast will override the corresponding global setting.</p>
+<p>These settings can be applied either globally on the ToastProvider component (all except the toast type), or as individual toast options. Any setting passed to the individual toast will override the corresponding global setting.</p>
 
 ```tsx
   type="success" // type of the toast, accepts: 'success' | 'error' | 'loading'
@@ -287,3 +287,9 @@ const {id, ref, timer: timerControls} = custom({id, duration, timer} => (
   | 'wrapperClass'
 
 ```
+
+<div class="markdown-heading" dir="auto">
+  <h3 tabindex="-1" dir="auto">Miscellaneous</h3>
+</div>
+
+<h4 tabindex="-1" dir="auto">Custom progress bar</h4>
