@@ -104,6 +104,8 @@ const ToastsPage = () => {
 
 <h4 tabindex="-1" dir="auto">Global options:</h4>
 
+<p>These settings can be passed as props to the ToastProvider component.</p>
+
 ```tsx
   gutter={16} // distance between the toasts (global only)
   maxToasts={10} // set to 0 if you dont want to limit the number of toasts (global only)
@@ -247,7 +249,7 @@ const getData = async () => {
 
 ```jsx
 dismiss('toast-1')
-dismiss() // dismiss all toasts
+dismiss() // dismisses all toasts
 ```
 
 <h4 tabindex="-1" dir="auto">remove()</h4>
@@ -259,10 +261,10 @@ remove() // removes all toasts
 ```
 
 <h4 tabindex="-1" dir="auto">custom()</h4>
-<p>Provide your own toast body. Provides id, timer, and duration as args. Accepts limited options.</p>
+<p>Provide your own toast body. Provides id, timer, and duration as args. Returns id, ref and timer. Accepts limited options.</p>
 
 ```jsx
-custom({id, duration, timer} => (
+const {id, ref, timer: timerControls} = custom({id, duration, timer} => (
   <div>
     <button onClick={()=> timer.pause()}>Pause toast</button>
   </div>
