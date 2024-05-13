@@ -143,7 +143,7 @@ const ToastsPage = () => {
   onIdle="my-idle-animation" // class that will be applied to the toast container when idle
   onExit="my-exit-animation" // class that will be applied to the toast container on exit
   enterDuration={500} // entrance duration; should be the same as the duration of the entrance animation
-  exitDuration={500} // entrance duration; should be the same as the duration of the entrance animation
+  exitDuration={500} // entrance duration; should be the same as the duration of the exit animation
   pauseOnHover={true} // pause the toast timer when hovering over it
   progressBar={{
    showDefault: true, // show the default progress bar
@@ -321,7 +321,33 @@ const {timer} = notify(
 );
 
 ```
+<p>To add a custom animation to the progress bar, pass keyframes and / or options to <code>progressBar: {animate: {keyframes, options}}</code>, which will be called by the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/animate">Element: animate()</a> method on the progress bar dom element.</p>
 
+```tsx
+
+notify(
+  <>
+    <div>
+        <p>
+          You can customize the progress bar.
+        </p>
+    </div>
+    <div
+      data-role="progress"
+      class="pointer-events-none absolute left-0 top-0 h-full w-full bg-blue-600/20"
+    />
+  </>,
+  {
+    progressBar: {
+      style: {
+        background: 'radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%)',
+      },
+      animate: {
+        keyframes: [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }],
+      },
+    },
+  });
+```
 
 <h4 tabindex="-1" dir="auto">Computations created outside a createRoot error</h4>
 <p>This error occurs when passing a jsx component as the first argument to the create toast functions. You can fix it by wrapping the component with createRoot().</p>
