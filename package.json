@@ -1,6 +1,6 @@
 {
   "name": "solid-moon-toast",
-  "version": "0.1.2",
+  "version": "0.1.9",
   "description": "A Solidjs toast library",
   "license": "MIT",
   "author": "Nyloth",
@@ -18,6 +18,10 @@
       "browser": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js",
       "node": "./dist/cjs/index.js"
+    },
+    "./dist/*.css": {
+      "import": "./dist/*.css",
+      "require": "./dist/*.css"
     }
   },
   "scripts": {

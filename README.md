@@ -63,6 +63,7 @@ Usage:
 ```tsx
 // App.tsx
 import { ToastProvider } from 'solid-moon-toast'
+import "solid-moon-toast/dist/index.css";
 import ToastsPage from './ToastsPage'
 
 const App = () => {
