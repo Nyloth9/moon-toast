@@ -118,7 +118,6 @@ const ToastsPage = () => {
    "background-color": "blue", // custom style for the toaster (global only)
   }}
   pauseOnTabSwitch={true} // pause the toast timer when switching browser tabs (global only)
->
 ```
 
 <h4 tabindex="-1" dir="auto">Common options:</h4>
