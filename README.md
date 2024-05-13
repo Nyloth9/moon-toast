@@ -218,7 +218,7 @@ timer.reset()
 ```
 
 <h4 tabindex="-1" dir="auto">update()</h4>
-<p>Updates an existing toast. Accepts a string or jsx as the first argument, and options (<a href="#common-options">common options</a>) as the second argument. Passing an id as an option is mandatory.</p>
+<p>Updates an existing toast. Accepts a string or jsx as the first argument, and options (<a href="#common-options">common options</a>) as the second argument. Passing an id as an option is required.</p>
 Returns an id, a ref to the toast element, and a timer:
 
 ```tsx
