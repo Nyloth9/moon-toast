@@ -305,7 +305,7 @@ const {timer} = notify(
         <p class="font-medium">
           This is a custom toast.
         </p>
-        <button onClick={()=> timer.pause }>Pause timer</button>
+        <button onClick={() => timer.pause}>Pause timer</button>
       </div>
     </div>
   
