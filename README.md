@@ -294,7 +294,7 @@ const {id, ref, timer: timerControls} = custom({id, duration, timer} => (
 
 <h4 tabindex="-1" dir="auto">Custom progress bar</h4>
 
-<p>You can use a custom progress bar by providing an element with a data-role="progress" property. After that, set the toast options to not show the default progress bar. The progress bar can be controlled with the timer prop.</p>
+<p>You can use a custom progress bar by providing an element with a data-role="progress" property. After that, set the toast options to not show the default progress bar. The progress bar can be controlled with the <a href="#user-content-notify">timer</a> prop.</p>
 Example:
 
 ```tsx
@@ -305,6 +305,7 @@ const {timer} = notify(
         <p class="font-medium">
           This is a custom toast.
         </p>
+        <button onClick={()=> timer.pause }>Pause timer</button>
       </div>
     </div>
   
