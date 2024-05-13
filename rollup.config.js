@@ -1,5 +1,5 @@
 import withSolid from 'rollup-preset-solid'
-import postcss from 'rollup-plugin-postcss'
+import alias from '@rollup/plugin-alias';
 import copy from 'rollup-plugin-copy'
 
 export default withSolid({
@@ -7,9 +7,10 @@ export default withSolid({
   printInstructions: true,
   input: 'src/index.tsx',
   plugins: [
-    postcss({
-      minimize: true,
-      extract: true,
+    alias({
+      entries: {
+        'solid-moon-toast': './src/styles/index.css',
+      },
     }),
     copy({
       targets: [{ src: 'src/styles/index.css', dest: 'dist/source/styles' }],
