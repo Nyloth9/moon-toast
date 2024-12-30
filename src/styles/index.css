@@ -71,7 +71,16 @@
   right: -4px;
   top: -4px;
   z-index: 5;
-  padding: 1px;
+  height: 16px;
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.moon-toast-dismiss-button_floating > svg {
+  position: absolute;
 }
 
 .moon-toast-dismiss-button_inline {
